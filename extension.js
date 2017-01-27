@@ -41,7 +41,11 @@ function testPackage() {
             if (stderr != "") {
                 testFail(stderr)
             } else {
-                testPass(stdout)
+                if (stdout.includes("--- FAIL")) {
+                    testFail(stdout)
+                } else {
+                    testPass(stdout)
+                }
             }
         })
         child()
