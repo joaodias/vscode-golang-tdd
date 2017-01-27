@@ -2,7 +2,7 @@
     "name": "golang-tdd",
     "displayName": "Golang TDD",
     "description": "Show some lights on the bottom bar. Red when tests are failing and green when passing. This runs on save. Better feedback with less effort.",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "publisher": "joaoacdias",
     "engines": {
         "vscode": "^1.5.0"

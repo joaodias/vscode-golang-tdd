@@ -4,7 +4,7 @@ Missing green and red lights on your tdd when developing in Golang? Here they ar
 
 ## Features
 
-![Golang TDD](images/golangtdd.gif)
+![Golang TDD](https://raw.githubusercontent.com/joaodias/vscode-golang-tdd/master/images/golangtdd.gif)
 
 ## Release Notes
 
