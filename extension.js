@@ -36,7 +36,7 @@ function testPackage() {
 
         const currentDir = path.dirname(editor.document.fileName)
 
-        child = exec('cd ' + currentDir + ' && go test',
+        child = exec('cd ' + currentDir + ' && go test -cover',
         function (error, stdout, stderr) {
             if (stderr != "") {
                 testFail(stderr)
@@ -53,16 +53,19 @@ function testPackage() {
 
 function testFail(message) {
     tddIcon.color = '#B62D05'
-    tddIcon.text = "$(x) Failing"
+    tddIcon.text = "$(x) Failing $(broadcast) " + getCoverage(message)
     tddIcon.show()
-    console.log(message)
 }
 
 function testPass(message) {
     tddIcon.color = '#6BAD5E'
-    tddIcon.text = "$(check) Passing"
+    tddIcon.text = "$(check) Passing $(broadcast) " + getCoverage(message)
     tddIcon.show()
     console.log(message)
+}
+
+function getCoverage(message) {
+    return /coverage: (.*?) of statements/.exec(message)[1]
 }
 
 function deactivate() {
