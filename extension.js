@@ -28,27 +28,27 @@ function setupBuildOnSave() {
 }
 
 function testPackage() {
-        const editor = vscode.window.activeTextEditor
-        if (!editor) {
-            vscode.window.showInformationMessage('No editor is active.')
-            return;
-        }
+    const editor = vscode.window.activeTextEditor
+    if (!editor) {
+        vscode.window.showInformationMessage('No editor is active.')
+        return;
+    }
 
-        const currentDir = path.dirname(editor.document.fileName)
+    const currentDir = path.dirname(editor.document.fileName)
 
-        child = exec('cd ' + currentDir + ' && go test -cover',
-        function (error, stdout, stderr) {
-            if (stderr != "") {
-                testFail(stderr)
+    child = exec('cd ' + currentDir + ' && go test -cover',
+    function (error, stdout, stderr) {
+        if (stderr != "") {
+            testFail(stderr)
+        } else {
+            if (stdout.includes("--- FAIL")) {
+                testFail(stdout)
             } else {
-                if (stdout.includes("--- FAIL")) {
-                    testFail(stdout)
-                } else {
-                    testPass(stdout)
-                }
+                testPass(stdout)
             }
-        })
-        child()
+        }
+    })
+    child()
 }
 
 function testFail(message) {

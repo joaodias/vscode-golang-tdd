@@ -1,6 +1,6 @@
 # Golang TDD red green
 
-Missing green and red lights on your tdd when developing in Golang? Here they are. Golang TDD gets green when tests for the current package passes and red otherwise. All of this on save. As a plus, you also get the current package coverage.
+Missing green and red lights on your tdd when developing in Golang? Here they are. Golang TDD gets green when tests for the current package passes and red otherwise. All of this on save and in the bottom right corner of vscode. As a plus, you also get the current package coverage. Enjoy!
 
 ## Features
 
