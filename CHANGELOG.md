@@ -11,3 +11,7 @@ Minor fixes
 ### 0.0.6
 
 Fix test result parsing
+
+### 0.0.7
+
+Remove coverage from failing test
