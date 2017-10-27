@@ -1,12 +1,12 @@
-var vscode = require('vscode')
-var exec = require('child_process').exec,
+let vscode = require('vscode')
+let exec = require('child_process').exec,
   child
-var path = require('path')
+let path = require('path')
 
 let tddIcon
 
 function activate(context) {
-  var disposable = vscode.commands.registerCommand('extension.golangTDD', function () {
+  let disposable = vscode.commands.registerCommand('extension.golangTDD', function () {
     tddIcon = vscode.window.createStatusBarItem('left', 1)
     tddIcon.text = "Golang TDD"
     tddIcon.color = "white"
